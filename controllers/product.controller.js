@@ -7,3 +7,13 @@ module.exports.list = (req, res, next) => {
     })
     .catch((e) => next(e));
 };
+
+module.exports.show = (req, res, next) => {
+  Product.findOne({id: req.params._id})
+    .then((product) => {
+      res.json(product);
+    })
+    .catch((e) => next(e));
+};
+
+

@@ -14,4 +14,5 @@ router.post('/login', authMiddleware.isNotAuthenticated, userController.login)
 router.get('/logout', authMiddleware.isAuthenticated, userController.logout)
 
 // Products
-router.get('/product', productController.list);
+router.get('/products', productController.list);
+router.get('/products/:id', productController.show);
